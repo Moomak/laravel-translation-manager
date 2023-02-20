@@ -756,8 +756,9 @@ class Controller extends BaseController
     {
         $replace = Request::get('replace', false);
         // the group publish form has no select for replace, it is always false, react does have it
-        $counter = $this->manager->importTranslations($group === '*' ? $replace : ($this->manager->inDatabasePublishing() == 1 ? 0 : $replace)
-            , $group === '*' ? null : [$group]);
+        $allGroup = 'all';
+        $counter = $this->manager->importTranslations($group === $allGroup ? $replace : ($this->manager->inDatabasePublishing() == 1 ? 0 : $replace)
+            , $group === $allGroup ? null : [$group]);
         return Response::json(array('status' => 'ok', 'counter' => $counter));
     }
 

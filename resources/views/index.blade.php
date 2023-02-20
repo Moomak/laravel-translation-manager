@@ -86,7 +86,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <form id="form-import-all" class="form-import-all" method="POST"
-                                            action="<?= action($controller . '@postImport', ['group' => '*']) ?>"
+                                            action="<?= action($controller . '@postImport', ['group' => 'all']) ?>"
                                             data-remote="true" role="form">
                                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                         <div class="row">
