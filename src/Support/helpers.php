@@ -55,13 +55,13 @@ if (!function_exists('mapTrans')) {
     }
 }
 
-if (!function_exists('arrayCopy')) {
-    function arrayCopy(array $array)
+if (!function_exists('arrayCopyTrans')) {
+    function arrayCopyTrans(array $array)
     {
         $result = array();
         foreach ($array as $key => $val) {
             if (is_array($val)) {
-                $result[$key] = arrayCopy($val);
+                $result[$key] = arrayCopyTrans($val);
             } elseif (is_object($val)) {
                 $result[$key] = clone $val;
             } else {
