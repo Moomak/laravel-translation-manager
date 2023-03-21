@@ -789,6 +789,6 @@ HTML;
         if (!is_array($configLocales)) $configLocales = array($configLocales);
 
         $locales = array_merge(array($currentLocale), $configLocales, $locales);
-        return array_flatten(array_unique($locales));
+        return \Illuminate\Support\Arr::flatten(array_unique($locales));
     }
 }
